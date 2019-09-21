@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8.0_181" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="D:/ProjectsFiles/ScalaProjects/lagom-scala-sbt/lagom-scala-sbt" value="PREVIEW" />
+        <entry key="D:/ProjectsFiles/ScalaProjects/play-scala-hello-world-tutorial/play-scala-hello-world-tutorial" value="PREVIEW" />
+        <entry key="D:/ProjectsFiles/ScalaProjects/play/play" value="PREVIEW" />
+        <entry key="D:/ProjectsFiles/play-scala-hello-world-tutorial/play-scala-hello-world-tutorial" value="PREVIEW" />
+        <entry key="D:/sbt_lagom/lagom-scala-sbt_hello_world/lagom-scala-sbt/lagom-scala-sbt" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ScalaSbtSettings">
+    <option name="customLauncherEnabled" value="true" />
+    <option name="customLauncherPath" value="D:\ProjectsFiles\ScalaProjects\play-scala-hello-world-tutorial\play-scala-hello-world-tutorial\sbt-dist\bin\sbt-launch.jar" />
+    <option name="customVMEnabled" value="true" />
+    <option name="customVMPath" value="C:/Program Files/Java/jdk1.8.0_181" />
+    <option name="vmParameters" value="-Dfile.encoding=UTF8 -Dsbt.log.format=true -Dsbt.repository.secure=false -Dsbt.gigahorse=false" />
+  </component>
+</project>
