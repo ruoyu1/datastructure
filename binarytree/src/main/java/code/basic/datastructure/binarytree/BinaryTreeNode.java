@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author liu_ry
+ * @author karen liu
  */
-public class RyBinaryTreeNode<Data> {
-    private RyBinaryTreeNode<Data> leftNode;
+public class BinaryTreeNode<Data> {
+    private BinaryTreeNode<Data> leftNode;
     private Data data;
-    private RyBinaryTreeNode<Data> rightNode;
+    private BinaryTreeNode<Data> rightNode;
 
-    public RyBinaryTreeNode<Data> getLeftNode() {
+    public BinaryTreeNode<Data> getLeftNode() {
         return leftNode;
     }
 
-    public void setLeftNode(RyBinaryTreeNode<Data> leftNode) {
+    public void setLeftNode(BinaryTreeNode<Data> leftNode) {
         this.leftNode = leftNode;
     }
 
@@ -27,24 +27,24 @@ public class RyBinaryTreeNode<Data> {
         this.data = data;
     }
 
-    public RyBinaryTreeNode<Data> getRightNode() {
+    public BinaryTreeNode<Data> getRightNode() {
         return rightNode;
     }
 
-    public void setRightNode(RyBinaryTreeNode<Data> rightNode) {
+    public void setRightNode(BinaryTreeNode<Data> rightNode) {
         this.rightNode = rightNode;
     }
 
-    public RyBinaryTreeNode(Data data) {
+    public BinaryTreeNode(Data data) {
         this.data = data;
     }
 
-    public RyBinaryTreeNode() {
+    public BinaryTreeNode() {
     }
 
     @Override
     public String toString() {
-        return "RyBinaryTreeNode{" +
+        return "BinaryTreeNode{" +
                 "leftNode=" + leftNode +
                 ", data=" + data +
                 ", rightNode=" + rightNode +
@@ -59,17 +59,17 @@ public class RyBinaryTreeNode<Data> {
      * @param <Data>    任意数据类型
      * @return 遍历序列
      */
-    private static <Data> List<Data> levelTravel(List<Data> nodedatas, RyBinaryTreeNode<Data> root) {
-        ArrayList<RyBinaryTreeNode<Data>> levelNodes = new ArrayList<>();
+    private static <Data> List<Data> levelTravel(List<Data> nodedatas, BinaryTreeNode<Data> root) {
+        ArrayList<BinaryTreeNode<Data>> levelNodes = new ArrayList<>();
         levelNodes.add(root);
         return levelTravel(new ArrayList<>(), levelNodes);
     }
 
-    private static <Data> List<Data> levelTravel(List<Data> nodedatas, List<RyBinaryTreeNode<Data>> levelNodes) {
+    private static <Data> List<Data> levelTravel(List<Data> nodedatas, List<BinaryTreeNode<Data>> levelNodes) {
         if (levelNodes.size() == 0) {
             return nodedatas;
         }
-        List<RyBinaryTreeNode<Data>> nextLevel = new ArrayList<>();
+        List<BinaryTreeNode<Data>> nextLevel = new ArrayList<>();
         levelNodes.forEach(node -> {
             nodedatas.add(node.getData());
             if (node.getLeftNode() != null) {
@@ -90,7 +90,7 @@ public class RyBinaryTreeNode<Data> {
      * @param <Data>    抽象数据类型
      * @return 结点数据序列
      */
-    private static <Data> List<Data> preOrderTravel(List<Data> nodedatas, RyBinaryTreeNode<Data> node) {
+    private static <Data> List<Data> preOrderTravel(List<Data> nodedatas, BinaryTreeNode<Data> node) {
         if (node == null) {
             return nodedatas;
         }
@@ -108,7 +108,7 @@ public class RyBinaryTreeNode<Data> {
      * @param <Data>    抽象数据类型
      * @return 结点数据序列
      */
-    private static <Data> List<Data> postOrderTravel(List<Data> nodedatas, RyBinaryTreeNode<Data> node) {
+    private static <Data> List<Data> postOrderTravel(List<Data> nodedatas, BinaryTreeNode<Data> node) {
         if (node == null) {
             return nodedatas;
         }
@@ -126,7 +126,7 @@ public class RyBinaryTreeNode<Data> {
      * @param <Data>    抽象数据类型
      * @return 结点数据序列
      */
-    private static <Data> List<Data> inOrderTravel(List<Data> nodedatas, RyBinaryTreeNode<Data> node) {
+    private static <Data> List<Data> inOrderTravel(List<Data> nodedatas, BinaryTreeNode<Data> node) {
         if (node == null) {
             return nodedatas;
         }
@@ -144,18 +144,18 @@ public class RyBinaryTreeNode<Data> {
      * @param <Data>    任意数据类型
      * @return 遍历序列
      */
-    private static <Data> List<Data> levelExpansionTravel(List<Data> nodedatas, RyBinaryTreeNode<Data> root) {
-        ArrayList<RyBinaryTreeNode<Data>> levelNodes = new ArrayList<>();
+    private static <Data> List<Data> levelExpansionTravel(List<Data> nodedatas, BinaryTreeNode<Data> root) {
+        ArrayList<BinaryTreeNode<Data>> levelNodes = new ArrayList<>();
         levelNodes.add(root);
         return levelExpansionTravel(new ArrayList<>(), levelNodes);
     }
 
-    private static <Data> List<Data> levelExpansionTravel(List<Data> nodedatas, List<RyBinaryTreeNode<Data>> levelNodes) {
+    private static <Data> List<Data> levelExpansionTravel(List<Data> nodedatas, List<BinaryTreeNode<Data>> levelNodes) {
         if (levelNodes.size() == 0) {
             return nodedatas;
         }
-        List<RyBinaryTreeNode<Data>> nextLevel = new ArrayList<>();
-        for (RyBinaryTreeNode<Data> node : levelNodes) {
+        List<BinaryTreeNode<Data>> nextLevel = new ArrayList<>();
+        for (BinaryTreeNode<Data> node : levelNodes) {
             if (node == null) {
                 nodedatas.add(null);
             } else {
@@ -176,7 +176,7 @@ public class RyBinaryTreeNode<Data> {
      * @param <Data>    抽象数据类型
      * @return 结点数据序列
      */
-    private static <Data> List<Data> preOrderExpansionTravel(List<Data> nodedatas, RyBinaryTreeNode<Data> node) {
+    private static <Data> List<Data> preOrderExpansionTravel(List<Data> nodedatas, BinaryTreeNode<Data> node) {
         if (node == null) {
             nodedatas.add(null);
             return nodedatas;
@@ -196,7 +196,7 @@ public class RyBinaryTreeNode<Data> {
      * @param <Data>    抽象数据类型
      * @return 结点数据序列
      */
-    private static <Data> List<Data> postOrderExpansionTravel(List<Data> nodedatas, RyBinaryTreeNode<Data> node) {
+    private static <Data> List<Data> postOrderExpansionTravel(List<Data> nodedatas, BinaryTreeNode<Data> node) {
         if (node == null) {
             nodedatas.add(null);
             return nodedatas;
@@ -216,7 +216,7 @@ public class RyBinaryTreeNode<Data> {
      * @param <Data>    抽象数据类型
      * @return 结点数据序列
      */
-    private static <Data> List<Data> inOrderExpansionTravel(List<Data> nodedatas, RyBinaryTreeNode<Data> node) {
+    private static <Data> List<Data> inOrderExpansionTravel(List<Data> nodedatas, BinaryTreeNode<Data> node) {
         if (node == null) {
             nodedatas.add(null);
             return nodedatas;
@@ -235,15 +235,15 @@ public class RyBinaryTreeNode<Data> {
      * @param <Data>    任意数据类型
      * @return 二叉树的根
      */
-    private static <Data> RyBinaryTreeNode<Data> preOrderCreate(List<Data> nodedatas, RyBinaryTreeNode<Data> node) {
+    private static <Data> BinaryTreeNode<Data> preOrderCreate(List<Data> nodedatas, BinaryTreeNode<Data> node) {
         if (nodedatas.get(0) == null) {
             nodedatas.remove(0);
             return node;
         }
         node.setData(nodedatas.get(0));
         nodedatas.remove(0);
-        node.setLeftNode(preOrderCreate(nodedatas, new RyBinaryTreeNode<>()));
-        node.setRightNode(preOrderCreate(nodedatas, new RyBinaryTreeNode<>()));
+        node.setLeftNode(preOrderCreate(nodedatas, new BinaryTreeNode<>()));
+        node.setRightNode(preOrderCreate(nodedatas, new BinaryTreeNode<>()));
         return node;
     }
 
@@ -254,19 +254,19 @@ public class RyBinaryTreeNode<Data> {
      * @param <Data>   任意数据类型
      * @return 二叉树深度
      */
-    private static <Data> int getDepth(RyBinaryTreeNode<Data> rootNode) {
+    private static <Data> int getDepth(BinaryTreeNode<Data> rootNode) {
         int depth = 0;
-        List<RyBinaryTreeNode<Data>> node = new ArrayList<>();
+        List<BinaryTreeNode<Data>> node = new ArrayList<>();
         node.add(rootNode);
         return getDepth(node, depth);
     }
 
-    private static <Data> int getDepth(List<RyBinaryTreeNode<Data>> nodes, int depth) {
+    private static <Data> int getDepth(List<BinaryTreeNode<Data>> nodes, int depth) {
         if (nodes.size() == 0) {
             return depth;
         }
-        List<RyBinaryTreeNode<Data>> nextLevel = new ArrayList<>();
-        for (RyBinaryTreeNode<Data> node : nodes) {
+        List<BinaryTreeNode<Data>> nextLevel = new ArrayList<>();
+        for (BinaryTreeNode<Data> node : nodes) {
             if (node.getLeftNode() != null) {
                 nextLevel.add(node.getLeftNode());
             }
@@ -283,7 +283,7 @@ public class RyBinaryTreeNode<Data> {
      * @param rootNode 二叉树根结点
      * @param <Data>   任意数据类型
      */
-    private static <Data> void printBinaryTreeVt(RyBinaryTreeNode<Data> rootNode) {
+    private static <Data> void printBinaryTreeVt(BinaryTreeNode<Data> rootNode) {
         //求二叉树的深度
         int depth = getDepth(rootNode);
         //求二叉树层次扩展遍历结果
@@ -351,10 +351,10 @@ public class RyBinaryTreeNode<Data> {
      * @param args not used
      */
     public static void main(String[] args) {
-        RyBinaryTreeNode<String> a = new RyBinaryTreeNode<>("A");
-        RyBinaryTreeNode<String> b = new RyBinaryTreeNode<>("B");
-        RyBinaryTreeNode<String> c = new RyBinaryTreeNode<>("C");
-        RyBinaryTreeNode<String> d = new RyBinaryTreeNode<>("D");
+        BinaryTreeNode<String> a = new BinaryTreeNode<>("A");
+        BinaryTreeNode<String> b = new BinaryTreeNode<>("B");
+        BinaryTreeNode<String> c = new BinaryTreeNode<>("C");
+        BinaryTreeNode<String> d = new BinaryTreeNode<>("D");
 
         a.setLeftNode(b);
         a.setRightNode(c);
@@ -386,7 +386,7 @@ public class RyBinaryTreeNode<Data> {
         //后序扩展遍历 D-B-C-A
         List<String> binaryTreeNodesData6 = postOrderExpansionTravel(new ArrayList<>(), a);
         System.out.println(String.format("二叉树后序扩展遍历:%s", binaryTreeNodesData6));
-        RyBinaryTreeNode<String> a_ = preOrderCreate(binaryTreeNodesData4, new RyBinaryTreeNode<>());
+        BinaryTreeNode<String> a_ = preOrderCreate(binaryTreeNodesData4, new BinaryTreeNode<>());
 
         System.out.println(String.format("二叉树深度:%s", getDepth(a)));
     }
