@@ -61,19 +61,25 @@ public class AdList {
         }
         //存储边表
         System.out.println(String.format("起始点（小于%d）,终点（小于%d）,权值（三者空格隔开）：", numNodes, numNodes));
-        for(int j = 0;j < numEdges;j ++){
+        for (int j = 0; j < numEdges; j++) {
             System.out.println(String.format("第%d/%d边结点", j, numEdges - 1));
             String input = scanner.next();
             String[] inputs = input.split(",");
             int numNodesPosition = Integer.valueOf(inputs[0]);
-            EdgeNode edgeNode = new EdgeNode( Integer.valueOf(inputs[1]), Integer.valueOf(inputs[2]),null);
+            EdgeNode edgeNode = new EdgeNode(Integer.valueOf(inputs[1]), Integer.valueOf(inputs[2]), null);
             //头插法
             VertexNode vertexNode = adList.getVertexNodes().get(numNodesPosition);
             EdgeNode temp = vertexNode.getFirstEdge();
             vertexNode.setFirstEdge(edgeNode);
             edgeNode.setNext(temp);
+            numNodesPosition = Integer.valueOf(inputs[1]);
+            EdgeNode edgeNode2 = new EdgeNode(Integer.valueOf(inputs[0]), Integer.valueOf(inputs[2]), null);
+            VertexNode vertexNode2 = adList.getVertexNodes().get(numNodesPosition);
+            EdgeNode temp2 = vertexNode2.getFirstEdge();
+            vertexNode2.setFirstEdge(edgeNode2);
+            edgeNode.setNext(temp2);
         }
-             //打印
+        //打印
         for (int i = 0; i < numNodes; i++) {
             System.out.print(adList.getVertexNodes().get(i));
         }
