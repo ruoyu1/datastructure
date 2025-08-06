@@ -43,7 +43,7 @@ public class RemoveRepeated {
     }
 
     public static void main(String[] args) {
-        String re = new RemoveRepeated().removeRepeated("aabcccbbad");
-        System.out.println(re);
+        System.out.println(new RemoveRepeated().removeRepeated("aabcccbbad"));
+        System.out.println(new RemoveRepeated().removeRepeated("aaad"));
     }
 }
